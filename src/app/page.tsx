@@ -17,6 +17,7 @@ export default function ParaphrasingApp() {
         <header className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Paraphrasing App</h1>
           <ThemeToggle theme={theme} setTheme={setTheme} />
+          test
         </header>
         <main>
           <ParaphrasingForm setResult={setResult} />
