@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { FileText, Users, Zap } from "lucide-react"
 
@@ -11,20 +9,23 @@ export default function Footer() {
   })
 
   useEffect(() => {
-    // Simulating fetching stats from an API
-    const fetchStats = () => {
-      setStats({
-        paraphrases: Math.floor(Math.random() * 10000),
-        users: Math.floor(Math.random() * 1000),
-        uptime: Math.floor(Math.random() * 100),
-      })
-    }
+    const fetchStats = async () => {
+      try {
+        setStats({
+          paraphrases: 1000,
+          users: 1000,
+          uptime: 1000,
+        });
+      } catch (error) {
+        console.error('Failed to fetch stats:', error);
+      }
+    };
 
-    fetchStats()
-    const interval = setInterval(fetchStats, 60000) // Update every minute
-
-    return () => clearInterval(interval)
-  }, [])
+    fetchStats();
+    const interval = setInterval(fetchStats, 60000); // Update every minute
+    
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <footer className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-8">

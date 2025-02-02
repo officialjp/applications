@@ -5,7 +5,6 @@ import ParaphrasingForm from "./components/ParaphrasingForm"
 import ParaphrasingResult from "./components/ParaphrasingResult"
 import ThemeToggle from "./components/ThemeToggle"
 import Footer from "./components/Footer"
-import { NavigationMenu } from "@/components/ui/navigation-menu"
 
 export default function ParaphrasingApp() {
   const [theme, setTheme] = useState<"light" | "dark">("light")
@@ -17,7 +16,6 @@ export default function ParaphrasingApp() {
         <header className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Paraphrasing App</h1>
           <ThemeToggle theme={theme} setTheme={setTheme} />
-          test
         </header>
         <main>
           <ParaphrasingForm setResult={setResult} />
