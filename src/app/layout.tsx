@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import PlausibleProvider from 'next-plausible'
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -12,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html className="dark:bg-gray-900" lang="en">
-      <body>{children}</body>
-    </html>
+    <PlausibleProvider domain="paraphrasing-tool-eosin.vercel.app">
+      <html className="dark:bg-gray-900" lang="en">
+        <body>{children}</body>
+      </html>
+    </PlausibleProvider>
   )
 }
